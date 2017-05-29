@@ -60,7 +60,7 @@ public class passwordValidator extends AppCompatActivity {
     }
     // boolean function to check the password length
     public static boolean passwordLegnth8 (String X){
-            if (X.length() > 8) {
+            if (X.length() >= 8) {
                 return true;
             }
             return false;
