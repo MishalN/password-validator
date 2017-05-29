@@ -17,6 +17,19 @@ public class ExampleUnitTest {
         assertTrue(passwordValidator.notPassword("Passord"));
         }
 
+    @Test
+    public void testStage2() {
+
+        assertTrue(passwordValidator.passwordLegnth8("12345678"));
+
+        assertTrue(passwordValidator.notPassword("Passord"));
+
+        assertTrue(passwordValidator.upperCase("passoOrd"));
+
+        assertTrue(passwordValidator.lowerCase("PPOIUUp"));
+
+        assertTrue(passwordValidator.isNumber("PPO1IUUp"));
+    }
 
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
