@@ -15,7 +15,7 @@ public class passwordValidator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_validator);
     }
-
+    // Stage 3 of the assignment
     public void submit(View view){
         password = (EditText) findViewById(R.id.input);
         n=0;
@@ -31,43 +31,49 @@ public class passwordValidator extends AppCompatActivity {
     }
 
     int n =0;
-    public void stage1 (String X) {
 
+    // stage 1 of the assignment
+    public void stage1 (String X) {
+        // call a function to check the password length
         if (passwordLegnth8(X) == true) {
             n++;
         }
+        // call a function to check the password is NOT "password"
         if (notPassword(X) == true) {
             n++;
         }
     }
-
+    // stage 2 of the assignment
     public  void stage2 (String X) {
+        // call a function to check if there is at least one upper case char
         if (upperCase(X) == true) {
             n++;
         }
+        // call a function to check if there is at least one lower case char
         if (lowerCase(X) == true) {
             n++;
         }
+        // call a function to check if there is at least one NUMBER char
         if (isNumber(X) == true) {
             n++;
         }
     }
-
-        public static boolean passwordLegnth8 (String X){
+    // boolean function to check the password length
+    public static boolean passwordLegnth8 (String X){
             if (X.length() > 8) {
                 return true;
             }
             return false;
         }
-
-        public static boolean notPassword(String X){
+    // boolean function to check the password is NOT "password"
+    public static boolean notPassword(String X){
             if (X.equalsIgnoreCase("PASSWORD")){
                 return false;
             }
             return true;
         }
 
-
+    // boolean function to check is at least one upper case char
     public static boolean upperCase (String X){
         for(int i=0;i<X.length();i++){
             if(Character.isUpperCase(X.charAt(i))){
@@ -76,7 +82,7 @@ public class passwordValidator extends AppCompatActivity {
         }
         return false;
     }
-
+    // boolean function to check is at least one lower case case char
     public static boolean lowerCase(String X){
         for(int i=0;i<X.length();i++){
             if(Character.isLowerCase(X.charAt(i))){
@@ -85,7 +91,7 @@ public class passwordValidator extends AppCompatActivity {
         }
         return false;
     }
-
+    // boolean function to check is at least one NUMBER char
     public static boolean isNumber(String X){
         for(int i=0;i<X.length();i++){
             if(Character.isDigit(X.charAt(i))){
